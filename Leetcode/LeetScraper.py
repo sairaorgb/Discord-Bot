@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import time
-import Leetcode.settings as settings
 import undetected_chromedriver as uc
+import os
 
 #Shows the path where chromedriver is installed
 s= Service('chromedriver.exe')
@@ -12,13 +12,18 @@ def Login():
     """Responsible for logging into the account provided in the settings file"""
     driver.get('https://leetcode.com/accounts/login/')
     time.sleep(5)
-    
+    Username=os.environ.get('Leet_Username')
+    Password=os.environ.get('Leet_Password')
+    if Username is None:
+        Username=input("Enter Username: ")
+    if Password is None:
+        Password=input("Enter Password: ")
     login=driver.find_element(by=By.XPATH,value="//input[@name='login']")
     password=driver.find_element(by=By.XPATH,value="//input[@name='password']")
     time.sleep(3)
-    login.send_keys(settings.Username)
+    login.send_keys(Username)
     time.sleep(3)
-    password.send_keys(settings.Password)
+    password.send_keys(Password)
     time.sleep(3)
     login_but=driver.find_element(by=By.XPATH,value="//button[@id='signin_btn']")
     login_but.click()
