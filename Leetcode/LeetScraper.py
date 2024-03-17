@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service
 import time
 import undetected_chromedriver as uc
 import os
-
+from selenium.common.exceptions import NoSuchElementException
 #Shows the path where chromedriver is installed
 s= Service('chromedriver.exe')
 driver=uc.Chrome()
@@ -139,4 +139,16 @@ def get_questions_for_company (company: str):
 
     return cleaned_title
 
+def get_editorial_solution(url:str) -> str:
+    #Click on the editorial button
+    driver.get(url)
+    time.sleep(5)
+    try:
+        element = driver.find_element(by=By.XPATH,value="//div[@class='normal absolute left-0 top-0 whitespace-nowrap font-normal' and text()='Editorial']")
+        element.click()
+        time.sleep(5)
+        Solution=driver.find_element(by=By.XPATH,value="//div[@class='FN9Jv WRmCx']").get_attribute("innerText")
+    except NoSuchElementException:
+        Solution=""
+    return Solution
 Login()
