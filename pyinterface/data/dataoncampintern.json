@@ -1,0 +1,123 @@
+[
+    {
+        
+            "company_name": "DataWorks Ltd.",
+            "location": "New York, NY",
+    
+            "no_of_vacancies": 3,
+            "eligible_disciplines": ["Statistics", "Data Science"],
+            "job_description": "Analyze data sets and develop predictive models.",
+            "skills_required": ["Statistical Analysis", "Programming", "Data Visualization"],
+            "stipend": "$2200/month",
+            "start_date": "2024-07-01",
+            "end_date": "2024-09-30",
+            "deadline": "2024-05-15",
+            "selection_procedure": {
+                "telephonic_interview": "Technical background discussion and project review",
+                "coding_round": "Data manipulation and analysis tasks",
+                "technical_round": "Present a case study and discuss findings",
+                "HR_round": "Evaluate interpersonal skills and cultural fit"
+            },
+            "year": "2024"
+    
+    },
+
+    {
+            "company_name": "MarketingGenius Inc.",
+            "location": "Los Angeles, CA",
+        
+    
+            "no_of_vacancies": 5,
+            "eligible_disciplines": ["Marketing", "Business Administration"],
+            "job_description": "Assist in developing and implementing marketing strategies.",
+            "skills_required": ["Market Research", "Communication", "Creativity"],
+            "stipend": "$1600/month",
+            "start_date": "2024-06-15",
+            "end_date": "2024-08-31",
+            "deadline": "2024-05-01",
+            "selection_procedure": {
+                "telephonic_interview": "Discuss marketing knowledge and experiences",
+                "written_test": "Analyze marketing scenarios and propose solutions",
+                "group_discussion": "Collaborate with peers on marketing challenges",
+                "HR_round": "Evaluate communication skills and cultural fit"
+            },
+            "year": "2024"
+    
+    },
+
+    {
+        
+            "company_name": "CreativeMinds Studio",
+            "location": "Chicago, IL",
+    
+            "no_of_vacancies": 4,
+            "eligible_disciplines": ["Graphic Design", "Visual Communication"],
+            "job_description": "Create visual concepts and designs for various projects.",
+            "skills_required": ["Adobe Creative Suite", "Typography", "Creativity"],
+            "stipend": "$1300/month",
+            "start_date": "2024-07-10",
+            "end_date": "2024-09-20",
+            "deadline": "2024-05-10",
+            "selection_procedure": {
+                "portfolio_review": "Evaluate design portfolio and previous projects",
+                "design_challenge": "Complete a design task under time constraints",
+                "technical_interview": "Discuss design principles and software proficiency",
+                "HR_round": "Evaluate personality traits and cultural fit"
+            },
+            "year": "2024"
+        
+    
+    },
+
+    
+    {
+    
+            "company_name": "HR Solutions Inc.",
+            "location": "Houston, TX",
+    
+            "no_of_vacancies": 2,
+            "eligible_disciplines": ["Human Resources Management"],
+            "job_description": "Assist in recruitment, training, and employee relations.",
+            "skills_required": ["Communication", "Problem-solving", "Interpersonal Skills"],
+            "stipend": "$1500/month",
+            "start_date": "2024-07-05",
+            "end_date": "2024-09-15",
+            "deadline": "2024-05-20",
+            "selection_procedure": {
+                "telephonic_interview": "Discuss HR knowledge and experiences",
+                "role_play": "Simulate HR scenarios and assess problem-solving skills",
+                "behavioral_interview": "Evaluate interpersonal skills and cultural fit",
+                "HR_round": "Final assessment of suitability for the role"
+            },
+            "year": "2024"
+        
+    
+    },
+
+
+
+    {
+        
+            "company_name": "Innovative Engineering Solutions",
+            "location": "Seattle, WA",
+    
+            "no_of_vacancies": 4,
+            "eligible_disciplines": ["Mechanical Engineering", "Electrical Engineering"],
+            "job_description": "Assist in product development and testing.",
+            "skills_required": ["Problem-solving", "Technical Skills", "Teamwork"],
+            "stipend": "$1700/month",
+            "start_date": "2024-06-25",
+            "end_date": "2024-09-10",
+            "deadline": "2024-05-10",
+            "selection_procedure": {
+                "telephonic_interview": "Discuss technical skills and academic background",
+                "technical_challenge": "Solve engineering problems related to the field",
+                "coding_round": "Implement algorithms and solve coding challenges",
+                "HR_round": "Evaluate communication skills and cultural fit"
+            },
+            "year": "2024"
+        
+    
+    }
+    
+]

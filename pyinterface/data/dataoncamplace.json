@@ -1,0 +1,101 @@
+[
+    {
+            "company_name": "XYZ Marketing Solutions",
+            "location": "New York, NY",
+            "no_of_vacancies": 3,
+            "type_of_offer": "Domestic",
+            "salary_details": {
+                "variable_pay": "$800",
+                "ctc": "$25,000",
+                "insurance": "Health insurance coverage provided"
+            },
+            "company_overview": "XYZ Marketing Solutions is a leading marketing agency specializing in digital marketing strategies.",
+            "eligible_disciplines": ["Marketing", "Business Administration"],
+            "skills_required": ["Creativity", "Communication", "Analytical Skills"],
+            "deadline": "2024-05-10",
+            "year": "2024"
+        
+    
+    },
+
+    {
+            "company_name": "ABC Data Analytics Ltd.",
+            "location": "San Francisco, CA",
+            "no_of_vacancies": 2,
+            "type_of_offer": "Domestic",
+            "salary_details": {
+                "variable_pay": "$900",
+                "ctc": "$28,000",
+                "insurance": "Health and dental insurance coverage provided"
+            },
+            "company_overview": "ABC Data Analytics Ltd. provides advanced data analysis solutions for businesses.",
+            "eligible_disciplines": ["Statistics", "Data Science"],
+            "skills_required": ["Statistical Analysis", "Data Visualization", "Problem-solving"],
+            "deadline": "2024-05-15",
+            "year": "2024"
+        
+    },
+
+
+    {
+        
+            "company_name": "DEF HR Solutions Inc.",
+            "location": "Chicago, IL",
+            "no_of_vacancies": 4,
+            "type_of_offer": "Domestic",
+            "salary_details": {
+                "variable_pay": "$1000",
+                "ctc": "$26,000",
+                "insurance": "Health and vision insurance coverage provided"
+            },
+            "company_overview": "DEF HR Solutions Inc. provides comprehensive human resources consulting services.",
+            "eligible_disciplines": ["Human Resources Management"],
+            "skills_required": ["Communication", "Problem-solving", "Interpersonal Skills"],
+            "deadline": "2024-05-20",
+            "year": "2024"
+        
+    
+    },
+
+
+    {
+
+            "company_name": "GHI Creative Studio",
+            "location": "Los Angeles, CA",
+            "no_of_vacancies": 3,
+            "type_of_offer": "Domestic",
+            "salary_details": {
+                "variable_pay": "$800",
+                "ctc": "$24,000",
+                "insurance": "Health insurance coverage provided"
+            },
+            "company_overview": "GHI Creative Studio specializes in graphic design and branding solutions.",
+            "eligible_disciplines": ["Graphic Design", "Visual Communication"],
+            "skills_required": ["Adobe Creative Suite", "Typography", "Creativity"],
+            "deadline": "2024-05-10",
+            "year": "2024"
+        
+    
+    },
+
+    {
+    
+            "company_name": "MNO Financial Services Ltd.",
+            "location": "London, UK",
+            "no_of_vacancies": 2,
+            "type_of_offer": "International",
+            "salary_details": {
+                "variable_pay": "$1000",
+                "ctc": "$35,000",
+                "insurance": "Health and life insurance coverage provided"
+            },
+            "company_overview": "MNO Financial Services Ltd. provides a wide range of financial solutions.",
+            "eligible_disciplines": ["Finance", "Economics"],
+            "skills_required": ["Financial Analysis", "Quantitative Skills", "Communication"],
+            "deadline": "2024-05-15",
+            "year": "2024"
+        
+    
+    }  
+    
+]

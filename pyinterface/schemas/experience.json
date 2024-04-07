@@ -1,0 +1,15 @@
+{
+    "company": {
+        "company_name": "",
+        "location":" "
+    },
+    
+    "experiences":{
+        "job_role":" ",
+        "eligibilities":[],
+        "stipend":" ",
+        "types_of_rounds":{},
+        "suggestions":" ",
+        "online_test_question":" "
+    }
+}

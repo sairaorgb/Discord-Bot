@@ -1,0 +1,21 @@
+{
+    
+    "company": {
+        "company_name": "",
+        "location":" "
+    },
+
+    "intern_job_profile":{
+        "no_of_vacancies":" ",
+        "eligible_disciplines":[],
+        "job_description":" ",
+        "skills_required" : [],
+        "stipend":" ",
+        "start_date":" ",
+        "end_date":" ",
+        "deadline":" ", 
+        "selection_procedure":{}, 
+        "year":" "
+    }
+
+}

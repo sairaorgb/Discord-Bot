@@ -1,0 +1,17 @@
+{
+    "company": {
+        "company_name": "",
+        "location":" "
+    },
+    
+    "placement_job_profile":{
+        "no_of_vacancies":" ",
+        "type_of_offer": " ",
+        "salary_details": {},
+        "company_overview": " ",
+        "eligible_disciplines": [],
+        "skills_required": [],
+        "deadline": " ",
+        "year": " "
+    }
+}

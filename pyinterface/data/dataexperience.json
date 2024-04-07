@@ -1,0 +1,89 @@
+[
+    {
+            "company_name": "DataTech Solutions",
+            "location": "New York, NY",
+            "company_id": "DT789",
+            "job_role": "Data Analyst Intern",
+            "eligibilities": ["Undergraduate students", "Statistics majors"],
+            "stipend": "$1800/month",
+            "types_of_rounds": {
+                "technical_interview": "Data analysis and problem-solving",
+                "HR_interview": "Behavioral questions and cultural fit assessment"
+            },
+            "suggestions": "Enhance statistical analysis skills and familiarity with data visualization tools.",
+            "online_test_question": "Analyze a given dataset and derive actionable insights."
+    },
+
+    {
+            "company_name": "TechGenius Innovations",
+            "location": "Seattle, WA",
+            "company_id": "TG123",
+            "job_role": "Machine Learning Intern",
+            "eligibilities": ["Graduate students", "Computer Science majors"],
+            "stipend": "$2500/month",
+            "types_of_rounds": {
+                "technical_interview": "Machine learning algorithms and implementation",
+                "coding_challenge": "Solve coding challenges related to machine learning",
+                "HR_interview": "Evaluate problem-solving skills and cultural fit"
+            },
+            "suggestions": "Brush up on machine learning concepts and algorithms.",
+            "online_test_question": "Implement a linear regression model from scratch."
+        
+    },
+
+    {
+            "company_name": "MarketingWise Solutions",
+            "location": "Los Angeles, CA",
+            "company_id": "MW456",
+            "job_role": "Marketing Intern",
+            "eligibilities": ["Undergraduate students", "Marketing majors"],
+            "stipend": "$1500/month",
+            "types_of_rounds": {
+                "telephonic_interview": "Discuss marketing concepts and strategies",
+                "case_study_analysis": "Analyze marketing case studies and propose solutions",
+                "group_discussion": "Collaborate with peers on marketing challenges",
+                "HR_interview": "Evaluate communication skills and cultural fit"
+            },
+            "suggestions": "Stay updated with current marketing trends and practices.",
+            "online_test_question": "Propose a marketing campaign for a new product."
+        
+    },
+
+    {
+            "company_name": "CreativeMinds Studios",
+            "location": "Chicago, IL",
+            "company_id": "CM789",
+            "job_role": "Graphic Design Intern",
+            "eligibilities": ["Undergraduate students", "Graphic Design majors"],
+            "stipend": "$1200/month",
+            "types_of_rounds": {
+                "portfolio_review": "Evaluate design portfolio and previous projects",
+                "design_challenge": "Complete a design task within a specified time",
+                "technical_interview": "Discuss design principles and software proficiency",
+                "HR_interview": "Evaluate personality traits and cultural fit"
+            },
+            "suggestions": "Build a strong portfolio showcasing design skills and creativity.",
+            "online_test_question": "Design a logo for a fictional company."
+        
+    },
+
+
+    {
+            "company_name": "FinancePro Advisors",
+            "location": "Houston, TX",
+            "company_id": "FP012",
+            "job_role": "Finance Intern",
+            "eligibilities": ["Undergraduate students", "Finance majors"],
+            "stipend": "$1600/month",
+            "types_of_rounds": {
+                "telephonic_interview": "Discuss financial concepts and market trends",
+                "case_study_analysis": "Analyze financial reports and propose solutions",
+                "technical_interview": "Solve quantitative finance problems",
+                "HR_interview": "Evaluate interpersonal skills and cultural fit"
+            },
+            "suggestions": "Stay updated with financial news and practice quantitative analysis.",
+            "online_test_question": "Analyze a financial statement and identify key metrics."
+        
+    }
+     
+]
