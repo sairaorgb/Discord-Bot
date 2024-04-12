@@ -92,14 +92,6 @@ def Get_Answers(url:str) -> str:
             return_str += "\n"
     
     return return_str
-    '''
-    with open('Answers.txt','a') as file:
-        file.write("\n\n")
-        file.write(f"--------------{j}--------------\n")
-        for i in code:
-            file.write(i.get_attribute("innerText"))
-            file.write("\n")
-    '''
 
 def Get_Question(url : str) -> str:
     """It scrapes the question from the problem's page"""
@@ -107,12 +99,6 @@ def Get_Question(url : str) -> str:
     time.sleep(5)
     element= driver.find_element(by=By.XPATH,value="//div[@data-track-load='description_content']")
     return element.get_attribute('innerText')
-    
-    '''
-    with open('Questions.txt','a',encoding='utf-8') as file:
-        file.write(element.get_attribute('innerText'))
-        file.write('\n')
-    '''
 
 def Get_Urls():
     """It returns all the urls for questions on any page that groups together questions eg "Arrays"""
@@ -165,7 +151,7 @@ def Get_Solution_Stats(Question_url:str,Language:str,Solution:str):
        """
     driver.get(Question_url)
     time.sleep(10)
-    #Clicks on the submit button
+    #Clicks on the code button
     submit_button=driver.find_element(by=By.XPATH,value="//button[@class='rounded items-center whitespace-nowrap focus:outline-none inline-flex bg-transparent dark:bg-dark-transparent text-text-secondary dark:text-text-secondary active:bg-transparent dark:active:bg-dark-transparent hover:bg-fill-secondary dark:hover:bg-fill-secondary px-1.5 py-0.5 text-sm font-normal group']")
     submit_button.click()
     time.sleep(3)
@@ -216,4 +202,21 @@ def Get_Solution_Stats(Question_url:str,Language:str,Solution:str):
     
     except NoSuchElementException:
         pass
-Login()
+def Get_Solution_Template(Question_url:str,Language:str)->str:
+    """Takes as input the url of the question,the langauge of the solution and returns the template of the solution"""
+    driver.get(Question_url)
+    time.sleep(10)
+    #Clicks on the code button
+    submit_button=driver.find_element(by=By.XPATH,value="//button[@class='rounded items-center whitespace-nowrap focus:outline-none inline-flex bg-transparent dark:bg-dark-transparent text-text-secondary dark:text-text-secondary active:bg-transparent dark:active:bg-dark-transparent hover:bg-fill-secondary dark:hover:bg-fill-secondary px-1.5 py-0.5 text-sm font-normal group']")
+    submit_button.click()
+    time.sleep(3)
+    #Select the language
+    Language_div = driver.find_element(By.XPATH, f"//div[text()='{Language}']")
+    Language_div.click()
+    time.sleep(3)
+    #Selects the text area to input code
+    txt=driver.find_element(by=By.XPATH,value="//textarea[@class='inputarea monaco-mouse-cursor-text']")
+    txt.send_keys(Keys.CONTROL + 'a')
+    txt.send_keys(Keys.CONTROL+'c')
+    template=pyperclip.paste()
+    return template
