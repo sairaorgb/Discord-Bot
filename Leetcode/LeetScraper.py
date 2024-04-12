@@ -1,9 +1,12 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import time
-import Leetcode.settings as settings
 import undetected_chromedriver as uc
-
+import os
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.keys import Keys
+import pyperclip
+import Results
 #Shows the path where chromedriver is installed
 s= Service('chromedriver.exe')
 driver=uc.Chrome()
@@ -12,13 +15,19 @@ def Login():
     """Responsible for logging into the account provided in the settings file"""
     driver.get('https://leetcode.com/accounts/login/')
     time.sleep(5)
-    
+    #Retrieves the username and password else it asks input the username and password
+    Username=os.environ.get('Leet_Username')
+    Password=os.environ.get('Leet_Password')
+    if Username is None:
+        Username=input("Enter Username: ")
+    if Password is None:
+        Password=input("Enter Password: ")
     login=driver.find_element(by=By.XPATH,value="//input[@name='login']")
     password=driver.find_element(by=By.XPATH,value="//input[@name='password']")
     time.sleep(3)
-    login.send_keys(settings.Username)
+    login.send_keys(Username)
     time.sleep(3)
-    password.send_keys(settings.Password)
+    password.send_keys(Password)
     time.sleep(3)
     login_but=driver.find_element(by=By.XPATH,value="//button[@id='signin_btn']")
     login_but.click()
@@ -134,4 +143,77 @@ def get_questions_for_company (company: str):
 
     return cleaned_title
 
+def get_editorial_solution(url:str) -> str:
+    """Returns the editorial solution as a string if present"""
+    #Click on the editorial button
+    driver.get(url)
+    time.sleep(5)
+    try:
+        element = driver.find_element(by=By.XPATH,value="//div[@class='normal absolute left-0 top-0 whitespace-nowrap font-normal' and text()='Editorial']")
+        element.click()
+        time.sleep(5)
+        Solution=driver.find_element(by=By.XPATH,value="//div[@class='FN9Jv WRmCx']").get_attribute("innerText")
+    except NoSuchElementException:
+        Solution=""
+    return Solution
+def Get_Solution_Stats(Question_url:str,Language:str,Solution:str):
+    """Takes as input the url of the question, the language the solution is written in and the solution
+       It returns a class of type AcceptedSolution or RejectedSolution
+       It returns None if there was an error with loading the driver
+       Constrains: Language has to be exactly as it appears in leetcode
+                   Solutions must hold proper indentation if necessary for the langauge
+       """
+    driver.get(Question_url)
+    time.sleep(10)
+    #Clicks on the submit button
+    submit_button=driver.find_element(by=By.XPATH,value="//button[@class='rounded items-center whitespace-nowrap focus:outline-none inline-flex bg-transparent dark:bg-dark-transparent text-text-secondary dark:text-text-secondary active:bg-transparent dark:active:bg-dark-transparent hover:bg-fill-secondary dark:hover:bg-fill-secondary px-1.5 py-0.5 text-sm font-normal group']")
+    submit_button.click()
+    time.sleep(3)
+    #Select the language
+    Language_div = driver.find_element(By.XPATH, f"//div[text()='{Language}']")
+    Language_div.click()
+    time.sleep(3)
+    #Selects the text area to input code
+    txt=driver.find_element(by=By.XPATH,value="//textarea[@class='inputarea monaco-mouse-cursor-text']")
+    txt.send_keys(Keys.CONTROL + 'a')
+    txt.send_keys(Keys.DELETE) 
+    time.sleep(3)
+    pyperclip.copy(Solution)
+    txt.send_keys(Keys.CONTROL + 'v') 
+    time.sleep(3)
+    txt.send_keys(Keys.CONTROL + Keys.ENTER)
+    #Wait for solution to load
+    time.sleep(20)
+    try:
+        submission_result=driver.find_element(by=By.XPATH,value="//span[@data-e2e-locator='submission-result']").text
+        if submission_result == "Accepted":
+            results=driver.find_element(by=By.XPATH,value="//div[@class='rounded-sd flex min-w-[275px] flex-1 cursor-pointer flex-col px-4 py-3 text-xs transition hover:opacity-100 bg-sd-accent']").text
+            runtime_result=""
+            for c in results:
+                if c.isspace():
+                    runtime_result +=" "
+                else:
+                    runtime_result +=c
+            results=driver.find_element(by=By.XPATH,value="//div[@class='rounded-sd flex min-w-[275px] flex-1 cursor-pointer flex-col px-4 py-3 text-xs transition hover:opacity-100 opacity-40']").text
+            memory_result=""
+            for c in results:
+                if c.isspace():
+                    memory_result +=" "
+                else:
+                    memory_result +=c
+            return Results.AcceptedSolution(runtime_result,memory_result)
+    except NoSuchElementException:
+        pass
+    try:
+        submission_result=driver.find_element(by=By.XPATH,value="//span[@data-e2e-locator='console-result']").text
+        if submission_result =="Time Limit Exceeded":
+            return Results.RejectedSolution("TimeError",submission_result)
+        elif submission_result =="Memory Limit Exceeded":
+            return Results.RejectedSolution("MemoryError",submission_result)
+        elif submission_result == "Runtime Error":
+            error=driver.find_element(by=By.XPATH,value="//div[@class='font-menlo whitespace-pre-wrap break-all text-xs text-red-60 dark:text-red-60']").text
+            return Results.RejectedSolution("RuntimeError",error)
+    
+    except NoSuchElementException:
+        pass
 Login()
